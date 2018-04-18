@@ -1,0 +1,9 @@
+version: '2'
+services:
+    cities:
+        build: 'cities'
+        ports:
+            - "8080:8080"
+
+    routes:
+      build: 'routes'
