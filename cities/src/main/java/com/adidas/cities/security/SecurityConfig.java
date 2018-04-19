@@ -13,7 +13,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests()
-            .antMatchers("/login").permitAll() //We allow access to /login to anybody
+            .antMatchers("/login", "/swagger-ui.html", "/webjars/**", "/images/**").permitAll() //We allow access to /login to anybody
             .anyRequest().authenticated() //Any other request requires authentication
             .and()
             // Request / login will come through this filter.
